@@ -1,0 +1,39 @@
+name: Discussion问题讨论
+title: "[Discussion] [Module Name] 请用一句简短的话描述讨论主题"
+description: 如果您有任何关于项目的疑问、建议或意见，欢迎在此提出讨论。
+labels: [ "discussion" ]
+body:
+  - type: checkboxes
+    attributes:
+      label: 搜索discussion
+      description: 请先在issues的discussion标签中查看是否已有类似的讨论。
+      options:
+        - label: 我已经查遍所有的[discussion](https://gitee.com/forward-seen/share/issues)，没有找到我想要的。
+          required: true
+
+  - type: textarea
+    attributes:
+      label: 背景
+      description: 请提供关于这个讨论主题的背景信息，比如您的使用场景、遇到的问题等。
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 预期结果
+      description: 您希望通过这个讨论能得到什么样的反馈或结果?
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: 行为准则
+      description: |
+        行为准则有助于为所有人创造一个和谐的交流环境。我们要求每个人都同意遵守这一准则。
+      options:
+        - label: >
+            我同意这个项目的[行为准则](https://www.apache.org/foundation/policies/conduct)
+          required: true
+  - type: markdown
+    attributes:
+      value: "谢谢您提交给我们Discussion，我们会尽快响应您发起的讨论。"
