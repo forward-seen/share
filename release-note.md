@@ -1,26 +1,20 @@
 # next-release
 
+[//]: # (说明：)
+
+[//]: # (1. Bug/Improve/Feature/Docs只记录面向用户的变化；)
+
+[//]: # (2. Project记录面向开发者的重要变化，发布release时不展示该部分内容。)
+
+
 [//]: # (## Bug fix)
 
-[//]: # ()
-[//]: # (### Core)
 
-[//]: # ()
-[//]: # (- [core] [cans] Fix kafka e2e testcase &#40;#4520&#41;)
-
-[//]: # ()
 [//]: # (## Improve)
 
-[//]: # ()
-[//]: # (- [Improve][Connector-V2][Jdbc-Source] Support for Decimal types as splict keys &#40;#4634&#41;)
 
-[//]: # ()
 [//]: # (## Feature)
 
-[//]: # (### Core)
-
-[//]: # ()
-[//]: # (- [Core] [API] Support convert strings as List<T> option &#40;#4362&#41;)
 
 ## Docs 
 
@@ -28,4 +22,8 @@
 - [Docs] 增加编码指南开发环境说明
 
 ## Project
+
 - [Project] 初始化项目
+- [Project] 创建项目结构的各个模块
+- [Project] [Bin] 增加一键修改升级版本号的命令脚本
+- [Common] [Starter] [OSS] 增加通用文件对象存储服务Starter

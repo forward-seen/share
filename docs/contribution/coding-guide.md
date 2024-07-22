@@ -7,11 +7,13 @@
 确保已安装下列软件:
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-* [JDK17](https://www.oracle.com/java/technologies/downloads/)  
+* [JDK17](https://www.oracle.com/java/technologies/downloads/) 
 * Maven
 * [JetBrains IDEA](https://www.jetbrains.com/idea/) 
 
-> 对于开发使用的IDE，虽然理论上讲每个工具都可以开发，但我仍然强烈建议你使用JetBrains IDEA
+> 其中Maven在使用IDEA时可自动下载；
+> 
+> 配好环境变量，保证Java、Git以及Maven的命令可用。
 
 ## 安装
 
@@ -39,7 +41,6 @@ git clone git@gitee.com:forward-seen/share.git
 ```bazaar
 #if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
 #parse("File Header.java")
-
 public class ${NAME} {
 }
 ```
@@ -59,12 +60,56 @@ Scheme选择Project；
 **安装以下插件并启用：**
 > File > Settings > Plugins
 
-- Alibaba Java Coding Guidelines(XenoAmess TPM)
 - Lombok
+- Alibaba Java Coding Guidelines
 
+### 运行
 
-[//]: # (## 运行)
+- 方式一：IDEA工具运行
 
+> share-xxx > src > main > java > com.shine.share.xxx.xxxApplication.class > 点击运行
 
+- 方式二：使用Maven编译运行
 
+```shell
+mvn clean install
 
+cd share-xxx/target
+java -jar share-xxx-${version}.jar
+```
+
+# 贡献代码
+
+### 提交PR
+
+1. 前提是你需要掌握Git以及Gitee的基本使用和配置；
+2. fork仓库到你的Gitee账户；
+3. 在本地提交你代码，并push到你的Gitee仓库分支；
+4. 在你的分支向源仓库申请PR，按照提示要求检查和填写。
+
+> 注意：由于提交模板限制，本仓库不支持轻量级PR，且你的PR标题应与release-note记录保持一致。
+
+### 发布版本 
+
+若你是仓库管理成员，你可以标记版本。
+
+你可以使用update_version脚本批量更新pom文件的版本号：
+
+```shell
+cd bin
+.\update_version.bat 1.0.0
+```
+
+若代码中增加了新的带有pom.xml文件的模块，需要在`bin/update_version.ps1`文件中加入维护列表：
+
+```shell
+$pomFiles = @(
+    "..\share-api\pom.xml",
+    "..\share-applications\pom.xml",
+    "..\pom.xml"
+)
+```
+
+### 发布release版本
+
+release版本应创建单独分支，并以`版本号-release`结尾命名。
