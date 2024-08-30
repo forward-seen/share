@@ -1,0 +1,70 @@
+name: Feature Request
+description: Make a functional suggestion for this project.
+title: "[Feature][Module Name] Please describe the feature proposal in a short sentence"
+labels: [ "feature" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the feature suggestion, we will consider it carefully!
+
+  - type: textarea
+    id: desired-solution
+    attributes:
+      label: Description
+      description: Please describe the functionality you want in as much detail as possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-solution
+    attributes:
+      label: Application scenario
+      description: Please describe the usage scenario of this function.
+    validations:
+      required: false
+
+  - type: textarea
+    id: related-problem
+    attributes:
+      label: Correlation problem
+      description: Are there other issues related to this at the moment? Clearly and concisely describe what the problem is, for example, when I... When, I always feel troubled.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative scheme
+      description: What alternatives have you considered? Clearly and concisely describe any alternative solutions or features that you have considered.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Reference material
+      description: Do you have additional context or screenshots? Add any additional context or screenshots about the feature request here.
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: Participation contribution
+      description: >
+        Would you like to mention PR? This is by no means mandatory, new contributors are welcome, and we are happy to guide you through the contribution process.
+      options:
+        - label: I intend to participate in the development implementation of specific features and contribute code back to the upstream community.
+
+  - type: checkboxes
+    attributes:
+      label: Code of conduct
+      description: |
+        The code of conduct helps to create a harmonious communication environment for all. We ask everyone to agree to abide by this code.
+      options:
+        - label: >
+            I agree with the program [code of conduct](https://www.apache.org/foundation/policies/conduct)
+          required: true
+  - type: markdown
+    attributes:
+      value: "Thank you for your advice and we will get back to you as soon as possible."

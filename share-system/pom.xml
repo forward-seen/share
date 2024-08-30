@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.shine</groupId>
         <artifactId>share</artifactId>
-        <version>0.0.3</version>
+        <version>0.0.4</version>
     </parent>
 
     <artifactId>share-system</artifactId>
@@ -35,6 +35,12 @@
                 </executions>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 
 </project>

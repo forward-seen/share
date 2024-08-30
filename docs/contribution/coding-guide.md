@@ -22,10 +22,24 @@
 接下来可以拉代码到你本地。
 
 ```shell
+git clone git@atomgit.com:xinfengwen/share.git
+```
+
+除了Open Atom，我们在Github、Gitee、GitCode也有仓库，你可以根据你的偏好选择平台。
+
+```shell
+git clone git@github.com:forward-seen/share.git
+```
+```shell
 git clone git@gitee.com:forward-seen/share.git
+```
+```shell
+git clone git@gitcode.com:forward-seen/share.git
 ```
 
 ### IDEA 配置
+
+使用IDEA打开项目，并且需要完成以下项目和工具的配置。
 
 **编码统一改为UTF-8：**
 > File > Settings > Editor > File Encodings
@@ -82,12 +96,12 @@ java -jar share-xxx-${version}.jar
 
 ### 提交PR
 
-1. 前提是你需要掌握Git以及Gitee的基本使用和配置；
-2. fork仓库到你的Gitee账户；
-3. 在本地提交你代码，并push到你的Gitee仓库分支；
+1. 前提是你需要掌握Git以及云上托管平台（Atom/Github/Gitee/GitCode）的基本使用和配置；
+2. fork仓库到你的平台账户；
+3. 在本地提交你代码，并push到你的平台仓库分支；
 4. 在你的分支向源仓库申请PR，按照提示要求检查和填写。
 
-> 注意：由于提交模板限制，本仓库不支持轻量级PR，且你的PR标题应与release-note记录保持一致。
+> 注意：由于提交模板限制，本仓库不支持轻量级PR，且你的PR标题应与release-note新增记录保持一致。
 
 ### 发布版本 
 
@@ -112,4 +126,4 @@ $pomFiles = @(
 
 ### 发布release版本
 
-release版本应创建单独分支，并以`版本号-release`结尾命名。
+release版本应创建单独的保护分支，并以`版本号.release`形式命名分支。

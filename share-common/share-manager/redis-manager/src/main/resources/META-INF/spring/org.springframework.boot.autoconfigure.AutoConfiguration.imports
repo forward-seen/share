@@ -1,0 +1,2 @@
+com.shine.share.redis.config.RedisConfigurer
+com.shine.share.redis.manager.RedisManager

@@ -6,12 +6,19 @@
     <parent>
         <groupId>com.shine</groupId>
         <artifactId>share</artifactId>
-        <version>0.0.3</version>
+        <version>0.0.4</version>
     </parent>
 
     <artifactId>share-domain</artifactId>
     <name>Share Domain</name>
     <description>领域模型模块</description>
     <packaging>pom</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.shine</groupId>
+            <artifactId>share-protocol</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.shine</groupId>
         <artifactId>share-common</artifactId>
-        <version>0.0.3</version>
+        <version>0.0.4</version>
     </parent>
 
     <artifactId>share-core</artifactId>
@@ -16,6 +16,8 @@
 
     <modules>
         <module>share-protocol</module>
+        <module>share-web</module>
+        <module>share-cloud</module>
     </modules>
 
 </project>

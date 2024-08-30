@@ -1,0 +1,39 @@
+name: Question
+title: "[Question] [Module Name] Please describe the topic of discussion in a short sentence"
+description: If you have any questions, suggestions or comments about the project, please feel free to discuss them here.
+labels: [ "question" ]
+body:
+  - type: checkboxes
+    attributes:
+      label: Search for question
+      description: Please first check in the issues to see if the issue already exists to avoid submitting duplicate questions.
+      options:
+        - label: I've looked through all the [issues] (https://github.com/forward-seen/share/issues), didn't find what I want.
+          required: true
+
+  - type: textarea
+    attributes:
+      label: backdrop
+      description: Please provide background information about this discussion topic, such as your usage scenarios, problems encountered, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected result
+      description: What kind of feedback or outcome do you expect from this discussion?
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Code of conduct
+      description: |
+        The code of conduct helps to create a harmonious communication environment for all. We ask everyone to agree to abide by this code.
+      options:
+        - label: >
+            I agree with the program [code of conduct](https://www.apache.org/foundation/policies/conduct)
+          required: true
+  - type: markdown
+    attributes:
+      value: "Thank you for submitting the Discussion to us. We will respond to the discussion you initiated as soon as possible."

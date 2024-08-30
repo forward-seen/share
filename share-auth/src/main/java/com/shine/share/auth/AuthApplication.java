@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * TODO to describe AuthApplication
+ * 认证授权服务中心应用启动入口
  *
  * @author 辛凤文
  * @since 1.0

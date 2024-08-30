@@ -26,4 +26,5 @@ public class OssAutoConfiguration {
     public OssClient ossClient() {
         return new OssClient(ossSettings);
     }
+
 }

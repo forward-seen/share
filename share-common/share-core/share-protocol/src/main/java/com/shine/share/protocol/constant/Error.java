@@ -15,7 +15,7 @@ import lombok.Getter;
  * @since 1.0
  */
 @Getter
-public enum ErrorCode {
+public enum Error implements ErrorDefinition {
     /**
      * 成功
      */
@@ -83,7 +83,6 @@ public enum ErrorCode {
     A0323("A0323", "非法IP地址"),
     A0324("A0324", "网关访问受限"),
     A0325("A0325", "地域黑名单"),
-    A0330("A0330", "服务已欠费"),
     A0340("A0340", "用户签名异常"),
     A0341("A0341", "RSA签名错误"),
     /**
@@ -112,9 +111,6 @@ public enum ErrorCode {
     A0432("A0432", "图片包含违禁信息"),
     A0433("A0433", "文件侵犯版权"),
     A0440("A0440", "用户操作异常"),
-    A0441("A0441", "用户支付超时"),
-    A0442("A0442", "确认订单超时"),
-    A0443("A0443", "订单已关闭"),
     /**
      * 二级宏观错误码
      */
@@ -182,7 +178,7 @@ public enum ErrorCode {
      * 系统异常
      * 一级宏观错误码
      */
-    B0001("B0001", "系统执行出错"),
+    B0001("B0001", "抱歉，系统出现一些意外~"),
 
     /**
      * 二级宏观错误码
@@ -286,7 +282,7 @@ public enum ErrorCode {
 
     private final String desc;
 
-    ErrorCode(String code, String desc) {
+    Error(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

@@ -1,0 +1,34 @@
+name: Umbrella
+title: "[Umbrella] Please describe the problem in a short sentence"
+description: A broader problem, or a complex problem that needs to be broken down and solved step-by-step.
+labels: [ "umbrella" ]
+body:
+
+  - type: checkboxes
+    attributes:
+      label: Search for issues
+      description:  Please first check in the issues to see if the issue already exists to avoid submitting duplicate questions.
+      options:
+        - label: I've looked through all the [issues](https://github.com/forward-seen/share/issues), could not find a solution to my problem.
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Complete description
+      placeholder: >
+        Please describe your problem clearly.
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: 行为准则
+      description: |
+        The code of conduct helps to create a harmonious communication environment for all. We ask everyone to agree to abide by this code.
+      options:
+        - label: >
+            I agree with the program [code of conduct](https://www.apache.org/foundation/policies/conduct)
+          required: true
+  - type: markdown
+    attributes:
+      value: "Thank you for taking the time to ask!"

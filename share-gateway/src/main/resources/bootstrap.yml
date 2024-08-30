@@ -1,0 +1,41 @@
+env:
+  # 环境类型，可选dev/test/prod
+  application:
+    name: ${APPLICATION_NAME:gateway}
+    profile: ${APPLICATION_PROFILE:dev}
+  nacos:
+    username: ${NACOS_USERNAME:}
+    password: ${NACOS_PASSWORD:}
+    server-addr: ${NACOS_SERVER_ADDR:8.140.253.90:18848}
+    namespace: ${NACOS_NAMESPACE:b4c0713f-e17f-4099-91d2-02310e9ac279}
+    group: ${NACOS_GROUP:SHARE_GROUP}
+  host:
+    ip: ${HOST_IP:192.168.88.113}
+    port: ${HOST_PORT:8080}
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ${env.application.name}
+  config:
+    import:
+      - optional:nacos:${spring.application.name}-${env.application.profile}.${spring.cloud.nacos.config.file-extension}
+  cloud:
+    nacos:
+      username: ${env.nacos.username}
+      password: ${env.nacos.password}
+      discovery:
+        server-addr: ${env.nacos.server-addr}
+        namespace: ${env.nacos.namespace}
+        group: ${env.nacos.group}
+        ip: ${env.host.ip}
+        port: ${env.host.port}
+      config:
+        server-addr: ${env.nacos.server-addr}
+        namespace: ${env.nacos.namespace}
+        group: ${env.nacos.group}
+        file-extension: yml
+        refresh-enabled: true
+        enable-remote-sync-config: true

@@ -6,7 +6,7 @@
 
     <groupId>com.shine</groupId>
     <artifactId>share</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 
     <name>Shine Share</name>
     <url>https://gitee.com/forward-seen/share</url>
@@ -14,14 +14,23 @@
     <packaging>pom</packaging>
 
     <properties>
-        <share.version>${project.version}</share.version>
+        <apache-commons.version>3.15.0</apache-commons.version>
+        <kaptcha.version>2.3.3</kaptcha.version>
+        <dynamic-ds.version>4.3.0</dynamic-ds.version>
+        <fastjson.version>2.0.47</fastjson.version>
+        <hutool.version>5.8.11</hutool.version>
         <java.version>17</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>3.3.1</spring-boot.version>
-        <spring-cloud.version>2021.0.8</spring-cloud.version>
-        <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
         <lombok.version>1.18.32</lombok.version>
+        <mybatis-plus.version>3.5.6</mybatis-plus.version>
+        <mybatis-plus-join.version>1.4.13</mybatis-plus-join.version>
         <oss-aws.version>1.12.261</oss-aws.version>
+        <postgresql.version>42.7.2</postgresql.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <share.version>${project.version}</share.version>
+        <spring-boot.version>3.2.4</spring-boot.version>
+        <spring-boot-admin.version>3.0.0-M4</spring-boot-admin.version>
+        <spring-cloud.version>2023.0.0</spring-cloud.version>
+        <spring-cloud-alibaba.version>2023.0.1.2</spring-cloud-alibaba.version>
     </properties>
 
     <modules>
@@ -37,19 +46,6 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- Share Protocol -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.shine</groupId>
-                <artifactId>share-core</artifactId>
-                <version>${share.version}</version>
-            </dependency>
-
             <!-- Spring Boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -59,7 +55,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- Share Cloud -->
+            <!-- Cloud -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -74,6 +70,32 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- ORM -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.yulichang</groupId>
+                <artifactId>mybatis-plus-join-boot-starter</artifactId>
+                <version>${mybatis-plus-join.version}</version>
+            </dependency>
+
+            <!-- JDBC -->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
 
             <!-- OSS -->
             <dependency>
@@ -81,6 +103,66 @@
                 <artifactId>aws-java-sdk-s3</artifactId>
                 <version>${oss-aws.version}</version>
             </dependency>
+
+            <!-- Dev tools & Libs -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>pro.fessional</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache-commons.version}</version>
+            </dependency>
+            <!-- Share  -->
+            <dependency>
+                <groupId>com.shine</groupId>
+                <artifactId>share-core</artifactId>
+                <version>${share.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.shine</groupId>
+                <artifactId>share-protocol</artifactId>
+                <version>${share.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.shine</groupId>
+                <artifactId>share-web</artifactId>
+                <version>${share.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.shine</groupId>
+                <artifactId>share-cloud</artifactId>
+                <version>${share.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.shine</groupId>
+                <artifactId>share-manager</artifactId>
+                <version>${share.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.shine</groupId>
+                <artifactId>redis-manager</artifactId>
+                <version>${share.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.shine</groupId>
+                <artifactId>share-starter</artifactId>
+                <version>${share.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -129,18 +211,26 @@
 
     <repositories>
         <repository>
-            <id>public</id>
-            <name>aliyun nexus</name>
+            <id>aliyun-nexus</id>
+            <name>Aliyun Nexus</name>
             <url>https://maven.aliyun.com/repository/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
         </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>public</id>
-            <name>aliyun nexus</name>
+            <id>aliyun-nexus</id>
+            <name>Aliyun Nexus</name>
             <url>https://maven.aliyun.com/repository/public</url>
             <releases>
                 <enabled>true</enabled>

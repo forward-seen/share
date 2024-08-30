@@ -1,0 +1,72 @@
+name: Bug Report
+title: "[Bug] [Module Name] Please describe the problem in a short sentence"
+description: When you find a Bug in your code that causes your application to crash or throw an exception, or there is a problem with a component, or something doesn't look right, you can bring it up here.
+labels: [ "bug" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your support and attention to the project. Before asking a question, make sure you have reviewed the [documentation](https://github.com/forward-seen/share/tree/master/docs)。
+
+  - type: checkboxes
+    attributes:
+      label: Search for issues
+      description: Please first check in the issues to see if the issue already exists to avoid submitting duplicate questions.
+      options:
+        - label: I've looked through all the [issues](https://github.com/forward-seen/share/issues), could not find a solution to my problem.
+          required: true
+
+  - type: textarea
+    attributes:
+      label: How to reproduce
+      description: Please tell us in detail how to reproduce the problem you encountered. If it involves code, you can provide a minimal code example and attach it using backticks ```.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected result
+      description: Please tell us what you expect to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual result
+      description: Please tell us what actually happened.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Screenshots or videos
+      description: If you can, upload any screenshots of the bug.
+      placeholder: |
+        [Upload pictures here]
+
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: Which version/branch of our software are you currently using?
+      options:
+        - master
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Code of conduct
+      description: |
+        The code of conduct helps to create a harmonious communication environment for all. We ask everyone to agree to abide by this code.
+      options:
+        - label: >
+            I agree with the program's [Code of conduct](https://www.apache.org/foundation/policies/conduct)
+          required: true
+  - type: markdown
+    attributes:
+      value: "Thank you for your feedback, we will reply to your question as soon as possible."
