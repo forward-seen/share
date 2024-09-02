@@ -3,7 +3,6 @@ package com.shine.share.gateway.handler;
 import com.shine.share.gateway.service.ValidateCodeService;
 import com.shine.share.protocol.web.Result;
 import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;

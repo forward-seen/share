@@ -36,7 +36,7 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
 
         if (ex instanceof NotFoundException) {
             error = ErrorCode.B0204;
-        } else if (ex instanceof ResponseStatusException responseStatusException) {
+        } else if (ex instanceof ResponseStatusException) {
             error = ErrorCode.B0205;
         } else {
             error = ErrorCode.B0200;

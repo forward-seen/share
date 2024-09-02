@@ -28,7 +28,7 @@ public class WebServerUtils {
     public static Mono<Void> webFluxResponseWriter(ServerHttpResponse response, ErrorDefinition error) {
         response.setStatusCode(HttpStatus.OK);
         response.getHeaders().add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-        Result<Object> result = new Result<>(error);
+        Result<?> result = Result.error(error);
         DataBuffer dataBuffer = response.bufferFactory().wrap(JSON.toJSONString(result).getBytes());
         return response.writeWith(Mono.just(dataBuffer));
     }
