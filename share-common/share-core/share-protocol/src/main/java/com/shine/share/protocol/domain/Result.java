@@ -1,11 +1,11 @@
-package com.shine.share.protocol.web;
+package com.shine.share.protocol.domain;
 
-import com.shine.share.protocol.constant.Error;
-import com.shine.share.protocol.constant.ErrorDefinition;
+import com.shine.share.protocol.constant.ResultCode;
+import com.shine.share.protocol.constant.Code;
 import lombok.Data;
 
 /**
- * API接口统一返回格式
+ * 结果集封装，服务之间传输统一返回格式
  *
  * @author 辛凤文
  * @since 1.0
@@ -31,8 +31,8 @@ public class Result<T> implements java.io.Serializable {
     }
 
     public Result(T data) {
-        this.code = Error.SUCCESS.getCode();
-        this.msg = Error.SUCCESS.getDesc();
+        this.code = ResultCode.SUCCESS.getCode();
+        this.msg = ResultCode.SUCCESS.getDesc();
         this.data = data;
     }
 
@@ -43,14 +43,14 @@ public class Result<T> implements java.io.Serializable {
     }
 
     public static <T> Result<T> success() {
-        return new Result<>(Error.SUCCESS.getCode(), Error.SUCCESS.getDesc());
+        return new Result<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getDesc());
     }
 
     public static <T> Result<T> success(T data) {
         return new Result<>(data);
     }
 
-    public static <T> Result<T> error(ErrorDefinition error) {
+    public static <T> Result<T> error(Code error) {
         return new Result<>(error.getCode(), error.getDesc());
     }
 

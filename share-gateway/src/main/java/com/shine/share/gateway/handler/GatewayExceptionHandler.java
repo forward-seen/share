@@ -2,7 +2,7 @@ package com.shine.share.gateway.handler;
 
 import com.shine.share.gateway.constant.ErrorCode;
 import com.shine.share.gateway.util.WebServerUtils;
-import com.shine.share.protocol.constant.ErrorDefinition;
+import com.shine.share.protocol.constant.Code;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.cloud.gateway.support.NotFoundException;
@@ -32,7 +32,7 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
             return Mono.error(ex);
         }
 
-        ErrorDefinition error;
+        Code error;
 
         if (ex instanceof NotFoundException) {
             error = ErrorCode.B0204;

@@ -5,7 +5,7 @@ import com.shine.share.gateway.config.properties.CaptchaProperties;
 import com.shine.share.gateway.constant.ErrorCode;
 import com.shine.share.gateway.service.ValidateCodeService;
 import com.shine.share.protocol.exception.ServiceException;
-import com.shine.share.protocol.web.Result;
+import com.shine.share.protocol.domain.Result;
 import com.shine.share.redis.constant.CacheConstants;
 import com.shine.share.redis.manager.RedisManager;
 import jakarta.annotation.Resource;

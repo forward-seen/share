@@ -3,7 +3,7 @@ package com.shine.share.protocol.constant;
 import lombok.Getter;
 
 /**
- * 错误码：
+ * 返回码：
  * 1. 五位组成
  * 2. A代表用户端错误
  * 3. B代表当前系统异常
@@ -15,11 +15,11 @@ import lombok.Getter;
  * @since 1.0
  */
 @Getter
-public enum Error implements ErrorDefinition {
+public enum ResultCode implements Code {
     /**
      * 成功
      */
-    SUCCESS("00000", "成功"),
+    SUCCESS("0", "成功"),
 
     /**
      * 一级宏观错误码
@@ -282,7 +282,7 @@ public enum Error implements ErrorDefinition {
 
     private final String desc;
 
-    Error(String code, String desc) {
+    ResultCode(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

@@ -1,6 +1,6 @@
 package com.shine.share.gateway.service;
 
-import com.shine.share.protocol.web.Result;
+import com.shine.share.protocol.domain.Result;
 
 import java.io.IOException;
 

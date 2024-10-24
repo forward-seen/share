@@ -1,7 +1,7 @@
 package com.shine.share.gateway.handler;
 
 import com.shine.share.gateway.service.ValidateCodeService;
-import com.shine.share.protocol.web.Result;
+import com.shine.share.protocol.domain.Result;
 import jakarta.annotation.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;

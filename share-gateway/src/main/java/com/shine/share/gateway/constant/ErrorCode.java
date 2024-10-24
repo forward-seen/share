@@ -1,6 +1,6 @@
 package com.shine.share.gateway.constant;
 
-import com.shine.share.protocol.constant.ErrorDefinition;
+import com.shine.share.protocol.constant.Code;
 import lombok.Getter;
 
 /**
@@ -16,7 +16,7 @@ import lombok.Getter;
  * @since 1.0
  */
 @Getter
-public enum ErrorCode implements ErrorDefinition {
+public enum ErrorCode implements Code {
 
     A0240("A0240", "验证码不能为空"),
     A0241("A0241", "验证码已失效"),

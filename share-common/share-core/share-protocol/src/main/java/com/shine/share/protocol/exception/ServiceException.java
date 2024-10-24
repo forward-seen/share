@@ -1,7 +1,7 @@
 package com.shine.share.protocol.exception;
 
-import com.shine.share.protocol.constant.Error;
-import com.shine.share.protocol.constant.ErrorDefinition;
+import com.shine.share.protocol.constant.ResultCode;
+import com.shine.share.protocol.constant.Code;
 import lombok.Getter;
 
 /**
@@ -12,21 +12,21 @@ import lombok.Getter;
  * @since 1.0
  */
 @Getter
-public class ServiceException extends RuntimeException {
+public class ServiceException extends Exception {
 
-    protected ErrorDefinition error;
+    protected Code error;
 
     protected String desc;
 
     public ServiceException() {
-        this.error = Error.B0001;
+        this.error = ResultCode.B0001;
     }
 
-    public ServiceException(ErrorDefinition error) {
+    public ServiceException(Code error) {
         this.error = error;
     }
 
-    public ServiceException(ErrorDefinition error, String desc) {
+    public ServiceException(Code error, String desc) {
         this.error = error;
         this.desc = desc;
     }

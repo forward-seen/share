@@ -1,4 +1,4 @@
-package com.shine.share.protocol.domain;
+package com.shine.share.web.domain;
 
 import lombok.Data;
 

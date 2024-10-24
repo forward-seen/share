@@ -1,9 +1,9 @@
 package com.shine.share.protocol.helper;
 
-import com.shine.share.protocol.constant.Error;
+import com.shine.share.protocol.constant.ResultCode;
 import com.shine.share.protocol.exception.BusinessException;
 import com.shine.share.protocol.exception.ServiceException;
-import com.shine.share.protocol.web.Result;
+import com.shine.share.protocol.domain.Result;
 
 /**
  * 将抛出的异常统一转换为结果集
@@ -28,7 +28,7 @@ public class ExceptionHelper {
     }
 
     public static Result<Void> toResult() {
-        return Result.error(Error.B0001);
+        return Result.error(ResultCode.B0001);
     }
 
 }

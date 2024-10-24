@@ -1,10 +1,10 @@
 package com.shine.share.web.handler;
 
-import com.shine.share.protocol.constant.Error;
+import com.shine.share.protocol.constant.ResultCode;
 import com.shine.share.protocol.exception.BusinessException;
 import com.shine.share.protocol.exception.ServiceException;
 import com.shine.share.protocol.helper.ExceptionHelper;
-import com.shine.share.protocol.web.Result;
+import com.shine.share.protocol.domain.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     }
 
     public Result<Void> errorResult(Exception e) {
-        log.error("error code : {}", Error.B0001, e);
+        log.error("error code : {}", ResultCode.B0001, e);
         return ExceptionHelper.toResult();
     }
 

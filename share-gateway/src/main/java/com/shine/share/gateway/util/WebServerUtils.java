@@ -1,8 +1,8 @@
 package com.shine.share.gateway.util;
 
 import com.alibaba.fastjson2.JSON;
-import com.shine.share.protocol.constant.ErrorDefinition;
-import com.shine.share.protocol.web.Result;
+import com.shine.share.protocol.constant.Code;
+import com.shine.share.protocol.domain.Result;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ public class WebServerUtils {
      * @param error    响应内容
      * @return Mono<Void>
      */
-    public static Mono<Void> webFluxResponseWriter(ServerHttpResponse response, ErrorDefinition error) {
+    public static Mono<Void> webFluxResponseWriter(ServerHttpResponse response, Code error) {
         response.setStatusCode(HttpStatus.OK);
         response.getHeaders().add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
         Result<?> result = Result.error(error);

@@ -1,8 +1,8 @@
 package com.shine.share.web.controller;
 
 
-import com.shine.share.protocol.constant.Error;
-import com.shine.share.protocol.web.Result;
+import com.shine.share.protocol.constant.ResultCode;
+import com.shine.share.protocol.domain.Result;
 
 /**
  * 实现该接口使用success或error方法传递参数封装统一返回结果集
@@ -12,8 +12,8 @@ import com.shine.share.protocol.web.Result;
  */
 public class BaseController {
 
-    public <T> Result<T> error(Error errorCode) {
-        return Result.error(errorCode);
+    public <T> Result<T> error(ResultCode code) {
+        return Result.error(code);
     }
 
     public <T> Result<T> success() {

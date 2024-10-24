@@ -1,7 +1,7 @@
 package com.shine.share.protocol.exception;
 
-import com.shine.share.protocol.constant.Error;
-import com.shine.share.protocol.constant.ErrorDefinition;
+import com.shine.share.protocol.constant.ResultCode;
+import com.shine.share.protocol.constant.Code;
 import lombok.Getter;
 
 /**
@@ -14,19 +14,19 @@ import lombok.Getter;
 @Getter
 public class BusinessException extends RuntimeException {
 
-    protected ErrorDefinition error;
+    protected Code error;
 
     protected String desc;
 
     public BusinessException() {
-        this.error = Error.B0001;
+        this.error = ResultCode.B0001;
     }
 
-    public BusinessException(ErrorDefinition error) {
+    public BusinessException(Code error) {
         this.error = error;
     }
 
-    public BusinessException(ErrorDefinition error, String desc) {
+    public BusinessException(Code error, String desc) {
         this.error = error;
         this.desc = desc;
     }

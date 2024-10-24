@@ -41,6 +41,7 @@
         <module>share-gateway</module>
         <module>share-system</module>
         <module>share-application</module>
+        <module>share-scheduler</module>
     </modules>
 
     <dependencyManagement>
@@ -126,6 +127,7 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${apache-commons.version}</version>
             </dependency>
+
             <!-- Share  -->
             <dependency>
                 <groupId>com.shine</groupId>
