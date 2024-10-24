@@ -89,7 +89,7 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
     }
 
     @Override
-    public void checkCaptcha(String code, String uuid) {
+    public void checkCaptcha(String code, String uuid) throws ServiceException {
         if (code == null || code.isBlank()) {
             throw new ServiceException(ErrorCode.A0240);
         }

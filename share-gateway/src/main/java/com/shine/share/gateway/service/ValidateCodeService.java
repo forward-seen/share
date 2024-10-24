@@ -1,6 +1,7 @@
 package com.shine.share.gateway.service;
 
 import com.shine.share.protocol.domain.Result;
+import com.shine.share.protocol.exception.ServiceException;
 
 import java.io.IOException;
 
@@ -26,6 +27,6 @@ public interface ValidateCodeService {
      * @param key
      * @param value
      */
-    void checkCaptcha(String key, String value);
+    void checkCaptcha(String key, String value) throws ServiceException;
 
 }
